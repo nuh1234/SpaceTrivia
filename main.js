@@ -1,7 +1,7 @@
 // Enum for available types from Trivia JSON Data
 const triviaEnum = Object.freeze({"question":"question", "answer":"answer", "choices":"choices", "imageUrl":"imageUrl", "description":"description"});
 // Enum for available values from local storage
-const localStorageEnum = Object.freeze({"previousIndex":"previousIndex", "score":"score", "userName":"userName"});
+const localStorageEnum = Object.freeze({"previousIndex":"previousIndex", "score":"score", "userName":"userName", "displayModal":"displayModal", "modalIndex":"modalIndex"});
 
 window.onload = () => {
     pageDidLoad();
@@ -74,11 +74,12 @@ function pageDidLoad () {
     } else { 
         const previousIndex =  parseInt(localStorage.getItem(localStorageEnum.previousIndex));
         const previousScore = parseInt(localStorage.getItem(localStorageEnum.score));
+        const displayModal = localStorage.getItem(localStorageEnum.displayModal);
         loadTriviaData( (response) => {
             const data = JSON.parse(response);
             const max = Object.keys(data).length - 1;
             if (previousIndex < max) {
-                let game = new Game(returningUser, data, previousIndex, previousScore);
+                let game = new Game(returningUser, data, previousIndex, previousScore, displayModal);
             } else {
                 PAGE.appendChild(new GameOver(previousScore, returningUser));
             }
@@ -87,7 +88,7 @@ function pageDidLoad () {
 }
 
 class Game {
-    constructor (name, data, currentQuestionIndex, currentScore) {        
+    constructor (name, data, currentQuestionIndex, currentScore, displayModal) {        
         this.name = name;
         this.data = data;
         this.currentQuestionIndex = currentQuestionIndex;
@@ -125,6 +126,12 @@ class Game {
         this.GAME_WINDOW = GAME_WINDOW;
         PAGE.appendChild(GAME_WINDOW);
         this.PAGE = PAGE;
+
+        // For case when refresh occured during modal pop up
+        if(displayModal === 'true') {
+            const index = localStorage.getItem(localStorageEnum.modalIndex);
+            this.displayModal(this.data[index]);
+        }
     }
 
     // Returns a an html list containing the data passed
@@ -141,13 +148,17 @@ class Game {
                     this.currentScore += 10;
                     this.scoreLabel.textContent = `Score: ${this.currentScore}`;
                 }
-                this.displayModal();
+                this.displayModal(this.currentQuestionData);
+                // Saves for case when refresh occurs during modal pop up
+                localStorage.setItem(localStorageEnum.modalIndex, this.currentQuestionIndex);
+
                 // Regardless of the result we move on to the next question
                 this.nextQuestion();
 
                 // Persisting data
                 localStorage.setItem(localStorageEnum.previousIndex, this.currentQuestionIndex);
                 localStorage.setItem(localStorageEnum.score, this.currentScore);
+
             }
         });
         const length = answerChoices.length;
@@ -184,28 +195,33 @@ class Game {
     }
 
     // Displays more information about the current question
-    displayModal() {
+    displayModal(currentQuestionData) {
+        localStorage.setItem(localStorageEnum.displayModal, true);
+
         const modalBox = document.createElement('div');
         modalBox.className = 'shadowBox';
+
         const modal = document.createElement('div');
         modal.className = 'modalContent';
+
         const closeButton = document.createElement('span');
         closeButton.className = 'modalClose';
         closeButton.innerHTML = '&times';
         closeButton.addEventListener('click', () => {
             this.PAGE.removeChild(modalBox);
+            localStorage.setItem(localStorageEnum.displayModal, false);
         });
 
         const answer = document.createElement('h2');
         answer.className = 'modalAnswer';
-        answer.textContent = this.currentQuestionData[triviaEnum.answer];
+        answer.textContent = currentQuestionData[triviaEnum.answer];
 
         const description = document.createElement('p');
-        description.textContent = this.currentQuestionData[triviaEnum.description];
+        description.textContent = currentQuestionData[triviaEnum.description];
         description.className = 'modalSubtext';
 
         const image = document.createElement('img');
-        image.src = this.currentQuestionData[triviaEnum.imageUrl];
+        image.src = currentQuestionData[triviaEnum.imageUrl];
         image.className = 'modalImage';
 
         modal.appendChild(closeButton);
@@ -219,6 +235,7 @@ class Game {
         window.onclick = (event) => {
             if (event.target == modalBox) {
                 this.PAGE.removeChild(modalBox);
+                localStorage.setItem(localStorageEnum.displayModal, false);
             }
         }
     }
