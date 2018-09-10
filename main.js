@@ -193,8 +193,12 @@ class Game {
         closeButton.className = 'modalClose';
         closeButton.innerHTML = '&times';
         closeButton.addEventListener('click', () => {
-            modalBox.style.display = 'none';
+            this.PAGE.removeChild(modalBox);
         });
+
+        const answer = document.createElement('h2');
+        answer.className = 'modalAnswer';
+        answer.textContent = this.currentQuestionData[triviaEnum.answer];
 
         const description = document.createElement('p');
         description.textContent = this.currentQuestionData[triviaEnum.description];
@@ -205,14 +209,16 @@ class Game {
         image.className = 'modalImage';
 
         modal.appendChild(closeButton);
+        modal.appendChild(answer);
         modal.appendChild(image);
         modal.appendChild(description);
+        
         modalBox.appendChild(modal);
         this.PAGE.appendChild(modalBox);
 
         window.onclick = (event) => {
             if (event.target == modalBox) {
-                modalBox.style.display = "none";
+                this.PAGE.removeChild(modalBox);
             }
         }
     }
@@ -228,7 +234,7 @@ function GameOver(finalScore, name) {
 
     const results = document.createElement('h2');
     results.className = 'results';
-    results.textContent = `${name} scored ${finalScore} points!`;
+    results.textContent = `${name} you scored ${finalScore} points!`;
 
     container.appendChild(gameOverLabel);
     container.appendChild(results);

@@ -132,9 +132,16 @@ button:focus {
 }
 
 .modalSubtext {
-    bottom: 20px;
+    bottom: 10px;
     color:white;
-    font-size: 14pt;
+    font-size: 12pt;
+    position: relative;
+}
+
+.modalAnswer {
+    color: white;
+    font-size: 16pt;
+
 }
 
 .gameOver {
