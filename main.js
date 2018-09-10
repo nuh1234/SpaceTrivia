@@ -58,7 +58,8 @@ function pageDidLoad () {
 
                 // Persist the new user
                 localStorage.setItem(localStorageEnum.userName, input);
-
+                localStorage.setItem(localStorageEnum.previousIndex, 0);
+                localStorage.setItem(localStorageEnum.score, 0);
                 loadTriviaData( (response) => {
                     var data = JSON.parse(response);
                     let game = new Game(input, data, 0, 0);
