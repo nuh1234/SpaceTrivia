@@ -63,12 +63,12 @@ function pageDidLoad () {
                     var data = JSON.parse(response);
                     let game = new Game(input, data, 0, 0);
                 });
+
             } else {
                 nameBox.value = '';
                 nameBox.placeholder = 'Name is required to play :)';
             }
         });
-
         PAGE.appendChild(submitButton);
     // Case where this is a returning user
     } else { 
@@ -76,7 +76,7 @@ function pageDidLoad () {
         const previousScore = parseInt(localStorage.getItem(localStorageEnum.score));
         loadTriviaData( (response) => {
             const data = JSON.parse(response);
-            const max = Object.keys(data).length - 1
+            const max = Object.keys(data).length - 1;
             if (previousIndex < max) {
                 let game = new Game(returningUser, data, previousIndex, previousScore);
             } else {
@@ -133,7 +133,7 @@ class Game {
         answerContainer.type = 'A';
         answerContainer.className = 'answerContainer';
         answerContainer.addEventListener('click', (event) => {
-            const index = event.target.id
+            const index = event.target.id;
             if (!!index) {
                 const currentChoices = this.currentQuestionData[triviaEnum.choices];
                 // If the the answer was correct
@@ -161,7 +161,6 @@ class Game {
             item.id = i;
             answerContainer.appendChild(item);
         }
-
         return answerContainer;
     }
 
@@ -174,7 +173,7 @@ class Game {
             // Update question data
             this.currentQuestionData = this.data[this.currentQuestionIndex];
             this.questionLabel.textContent = this.currentQuestionData[triviaEnum.question];
-            const answerContainer = this.makeList(this.currentQuestionData[triviaEnum.choices])
+            const answerContainer = this.makeList(this.currentQuestionData[triviaEnum.choices]);
             //Replace old choices with new choices
             this.GAME_WINDOW.replaceChild(answerContainer, this.answerContainer);
             this.answerContainer = answerContainer;
@@ -217,7 +216,6 @@ class Game {
             }
         }
     }
-
 }
 
 function GameOver(finalScore, name) {
