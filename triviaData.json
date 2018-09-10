@@ -1,0 +1,79 @@
+{
+    "0": {
+      "question": "What type of galaxy is the most common in the universe?",
+      "answer": "Elliptical galaxies",
+      "choices": ["Solar Galaxies", "Globular Custers", "Spiral galaxies", "Elliptical galaxies"],
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Abell_S740%2C_cropped_to_ESO_325-G004.jpg/440px-Abell_S740%2C_cropped_to_ESO_325-G004.jpg",
+      "description": "Galaxies are categorized as elliptical, spiral, or irregular. There are at least two trillion galaxies in the universe. Each galaxy is bound by gravity and consists of stars, dust, interstellar gas, and dark matter. They range in size from a few billion stars to one hundred trillion stars. The oldest and most distant observed galaxy is actually 32 billion light years from Earth and is located in the constellation Ursa Major."
+    },
+    "1": {
+      "question": "What is the coldest place in the universe? (Hint: It’s a nebula.)",
+      "answer": "The Boomerang Nebula",
+      "choices": ["The Boomerang Nebula", "The Dragon Nebula", "The Orion Nebula"],
+      "imageUrl": "http://www.nasa.gov/sites/default/files/images/133229main_image_feature_405_ys_full.jpg",
+      "description": "The Boomerang Nebula is one degree Kelvin which is -458 degrees Fahrenheit or -272.15 degrees Celsius. It is located in the Centaurus constellation and is colder than the background temperature of deep space."
+    },
+    "2": {
+      "question": "The hottest place in the universe is located in which constellation?",
+      "answer": "The constellation Virgo",
+      "choices": ["Miami Beach", "The constellation Virgo", "The big dipper", "The constellation Aries"],
+      "imageUrl": "https://pixfeeds.com/images/astronomy/constellations/1280-1200-538641396-virgo-constellation.jpg",
+      "description": "The hottest place in the universe is actually a cloud of gas surrounding a swarm of galaxies that are clustered together in the Virgo constellation. The temperature there reaches 300 million degrees Celsius. The cloud is believed to have been formed as a result of colliding galaxies going at speeds of 2,500 miles per second."
+    },
+    "3": {
+      "question": "How old is the universe in light years? (Plus or minus 1 billion light years.)",
+      "answer": "13.8 billion light years old",
+      "choices": ["13.8 billion light years old", "3.8 billion light years old", "7.2 billion light years old", "23.8 billion light years old"],
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/NASA-HS201427a-HubbleUltraDeepField2014-20140603.jpg",
+      "description": "Scientists used various methods to estimate its age. These included methods such as measuring the composition of matter and energy density in the universe. Scientists also studied the oldest objects in space to help calculate its age. For example, they measured the age of some of the oldest known stars since there is a set method of determining the life cycle of a star based on its mass."
+    },
+    "4": {
+      "question": "What percent of the universe is dark matter? (Plus or minus 2%.)",
+      "answer": "27%",
+      "choices": ["27%", "10%", "50%", "90%"],
+      "imageUrl": "https://media.npr.org/assets/img/2018/02/27/first-star-_wide-2cfbca2ae8d16845f200a84d49d7ddbb5b120323-s800-c85.jpg",
+      "description": "The rest of the universe is around 68% dark energy, and less than 5% of the universe is made up of what we would consider “normal” matter. This means that roughly 80% of the mass of the universe is made up of material we cannot see."
+    },
+    "5": {
+      "question": "How many planets are in the Solar System?",
+      "answer": "8",
+      "choices": ["9", "7", "10", "8"],
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Planet_nine_artistic_plain.png/1200px-Planet_nine_artistic_plain.png",
+      "description": "Four are terrestrial planets which include Mercury, Venus, Earth and Mars. The other four are giant planets which include Jupiter, Saturn, Uranus and Neptune. Jupiter and Saturn are gas giant planets, and Uranus and Neptune are ice giant planets. Pluto was declassified as a planet in August 2006. Sorry Pluto! In 2014, the hypothetical planet dubbed Planet Nine was discovered, but its existence has not yet been confirmed."
+    },
+    "6": {
+      "question": "What is the largest planet in our solar system?",
+      "answer": "Jupiter",
+      "choices": ["Saturn", "Jupiter", "Uranus", "Neptune"],
+      "imageUrl": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/05/02/11/jupiter-red-spot.jpg?w968",
+      "description": "Jupiter is the largest planet in our solar system in terms of mass, volume, and surface. Jupiter’s diameter is roughly 11 times that of Earth. Jupiter’s mass is one thousandth that of the sun but 2.5 times the mass of all the planets in our solar system combined. Jupiter also boasts the largest moon in our solar system with its moon Ganymede."
+    },
+    "7": {
+      "question": "What is the smallest planet in our solar system?",
+      "answer": "Mercury",
+      "choices": ["Mercury", "Mars", "Earth", "Venus"],
+      "imageUrl": "http://www.astronomy.com/-/media/Images/News%20and%20Observing/News/2018/03/spectra_mercury.jpg?mw=600",
+      "description": "Mercury only has an equatorial radius of 1,516 miles. This means that Mercury is actually smaller than Jupiter’s largest moon, Ganymede."
+    },
+    "8": {
+        "question": "What is the most common type of star found in the Milky Way?",
+        "answer": "Red dwarf stars",
+        "choices": ["Red dwarf stars", "White Solar Stars", "The Sun"],
+        "imageUrl": "https://cdn-images-1.medium.com/max/1600/0*XTj6fQzCikeAlnuc.jpg",
+        "description": "Red dwarf stars make up an estimated ¾ of all stars found in the Milky Way. The surface temperature of red dwarf stars is less than 4,000 Kelvin, and they have a very low luminosity and therefore cannot be easily seen. In fact, from Earth not one red dwarf star can be seen with the naked eye. Since they develop very slowly and are constant for trillions of years, there are actually no advanced stars of this type in our universe because our universe is too young!"
+    },
+    "9": {
+        "question": "What is the longest continuous time a human has spent in space? (Plus or minus 20 days.)",
+        "answer": "437 Days",
+        "choices": ["200 Days", "The length of the movie Interstellar", "1 Year", "437 Days"],
+        "imageUrl": "https://timedotcom.files.wordpress.com/2014/11/interstellar.jpg",
+        "description": "This amounts to more than 14 months in space. This feat was accomplished by Valeri Polyakov, a Russian astronaut who stayed aboard the Mir space station from January 1994 to March 1995. When Polyakov retired he had over 678 cumulative days in space, and his combined space time was over 22 months."
+    },
+    "10": {
+        "question": "What has a gravitational pull so strong that even light cannot escape it?",
+        "answer": "A black hole",
+        "choices": ["Your soul", "A black hole", "Earth's gravitational pull"],
+        "imageUrl": "https://www.nasa.gov/sites/default/files/cygx1_ill.jpg",
+        "description": "Black holes are one of the deadliest things in the universe. They are formed when a star with a mass more than three times that of our sun dies and collapses onto itself after an explosion called a supernova. Black holes can siphon the gas out of stars until they vanish. They can even break apart and swallow planets."
+    }
+}
