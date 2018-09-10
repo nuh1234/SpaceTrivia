@@ -1,6 +1,6 @@
 // Enum for available types from Trivia JSON Data
 const triviaEnum = Object.freeze({"question":"question", "answer":"answer", "choices":"choices", "imageUrl":"imageUrl", "description":"description"});
-// Enum for avialable values from local storage
+// Enum for available values from local storage
 const localStorageEnum = Object.freeze({"previousIndex":"previousIndex", "score":"score", "userName":"userName"});
 
 window.onload = () => {
@@ -65,12 +65,12 @@ function pageDidLoad () {
                 });
             } else {
                 nameBox.value = '';
-                nameBox.placeholder = 'Name is required to play :)'
+                nameBox.placeholder = 'Name is required to play :)';
             }
         });
 
         PAGE.appendChild(submitButton);
-    // Case for returning user
+    // Case where this is a returning user
     } else { 
         const previousIndex =  parseInt(localStorage.getItem(localStorageEnum.previousIndex));
         const previousScore = parseInt(localStorage.getItem(localStorageEnum.score));
@@ -87,7 +87,6 @@ function pageDidLoad () {
 }
 
 class Game {
- 
     constructor (name, data, currentQuestionIndex, currentScore) {        
         this.name = name;
         this.data = data;
